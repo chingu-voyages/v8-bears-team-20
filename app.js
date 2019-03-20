@@ -1,6 +1,7 @@
 // app.js
 const express = require('express');
 const bodyParser = require('body-parser');
+const global = require('./global')
 
 const user = require('./routes/user.routes'); // Imports routes 
 // initialize our express app
@@ -8,8 +9,7 @@ const app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-// let dev_db_url = 'mongodb+srv://cb20user:chingubearsteam20@ccluster-xjjpt.mongodb.net/test?retryWrites=true';
-let dev_db_url = 'mongodb://localhost:27017/db';
+let dev_db_url = global.mongo_url;
 const mongoDB = dev_db_url;
 mongoose.connect(mongoDB);
 console.log("connecting...")
