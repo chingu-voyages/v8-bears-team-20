@@ -1,5 +1,6 @@
 // app.js
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const global = require('./global')
 
@@ -13,7 +14,7 @@ let dev_db_url = global.mongo_url;
 const mongoDB = dev_db_url;
 mongoose.connect(mongoDB);
 console.log("connecting...")
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
