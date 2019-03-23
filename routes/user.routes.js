@@ -6,7 +6,7 @@ const user_controller = require('../controllers/user.controller');
 
 
 // a simple test url to check that all of our files are communicating correctly.
-router.get('/test', user_controller.test);
-router.post('/create', user_controller.create_user);
-router.post('/check', user_controller.check_user);
+router.get('/', user_controller.user);
+router.post('/register', user_controller.register);
+router.post('/login', user_controller.login);
 module.exports = router;
