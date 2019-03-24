@@ -43,17 +43,18 @@ exports.register = function (req, res) {
 
 
 exports.login = function (req, res) {
-    if (req.body.email && req.body.name && req.body.password && req.body.confirmPassword){
+    if (req.body.email && req.body.password){
         user_email = req.body.email;
         password = req.body.password;
         let user = User.findOne({'email': user_email}, function(err, docs){
-            if(docs == undefined){
+            // console.log(docs)
+            if(docs === undefined){
                 res.send({"status": false})
             }else{
                 if(err){
                     res.send({"status": false})
                 }else{
-                    // console.log(docs)
+                    console.log(docs)
                     salt = docs.salt
                     passwordHash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512').toString('hex');
                     if(docs.password === passwordHash){
