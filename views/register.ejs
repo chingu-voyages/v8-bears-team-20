@@ -1,0 +1,31 @@
+<% include partials/header.ejs %>
+
+<div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/login">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <h1>create account</h1>
+        <form action="/register" method="POST">
+            Username</br><input type="text" name="username" placeholder="Username" required></br>
+            Email</br><input type="email" placeholder="Email" required></br>
+            Password</br><input type="password" name="password" placeholder="Password" required></br>
+            Confirm Password</br><input type="password" placeholder="Confirm Password" required></br>
+            <button>Register</button>
+        </form>
+    </main>
+
+
+    <footer>
+        © 2019 The Bears Team
+    </footer>
+</div>
+<% include partials/footer.ejs %>

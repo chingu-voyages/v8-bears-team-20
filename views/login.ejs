@@ -1,0 +1,34 @@
+<% include partials/header.ejs %>
+
+<div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/login">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <h1>login</h1>
+        <form action='/login' method="POST">
+            Username</br><input type="text" name="username" placeholder="Username" required></br>
+            Password</br><input type="password" name="password" placeholder="Password" required></br>
+            <button>Sign In</button>
+            <div>
+                <p>Reset Password</p>
+                <p><a href="/register">Create account</a></p>
+            </div>
+        </form>
+    </main>
+
+
+    <footer>
+        © 2019 The Bears Team
+    </footer>
+</div>
+
+<% include partials/footer.ejs %>
